@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-sans antialiased ${fontSans.variable} bg-foreground`}
+        className={`font-sans antialiased ${fontSans.variable}`}
       >
         {children}
       </body>

@@ -8,7 +8,7 @@ const buttonVariants = cva(
 		variants: {
 			variant: {
 				default: "border-0",
-				outline: "!bg-transparent border-2",
+				outline: "!bg-background border-2",
 			},
 			intent: {
 				default: "bg-foreground text-background hover:bg-foreground/80 ring-foreground border-foreground",
@@ -64,8 +64,10 @@ const buttonVariants = cva(
 	}
 )
 
+// กำหนด type ให้รองรับ HtmlButtonElement
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>
 
+// className ใช้ร่วมกันกับ tailwind-merge ได้เลย
 const Button = ({ className, variant, intent, size, ...props }: ButtonProps) => (
 	<button
 		className={cn(buttonVariants({ variant, intent, size }), className)}

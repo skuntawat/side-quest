@@ -1,20 +1,19 @@
-
 const number = 123456.789
 const amount = 3500
 const digits = 5.22
 
-export const usd = new Intl.NumberFormat("en-US", {
+const usd = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 2,
     roundingIncrement: 5,
-});
+})
 
-export const thb = new Intl.NumberFormat("th-TH", {
+const thb = new Intl.NumberFormat("th-TH", {
     style: "currency",
     currency: "THB",
     maximumFractionDigits: 2
-});
+})
 
 export default function page() {
     return (

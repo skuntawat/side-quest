@@ -23,7 +23,7 @@ const DecimalStarRating = ({
     return (
         <div className="inline-flex items-center relative">
             {Array.from(Array(max).keys()).map((_, i) => (
-                <Icon key={i} className="stroke-0 size-10 flex fill-yellow-500" />
+                <Icon key={i} className="stroke-0 size-10 fill-yellow-500" />
             ))}
             <div
                 className="bg-slate-500 absolute top-0 right-0 bottom-0 z-10 mix-blend-color"

@@ -22,8 +22,8 @@ const DecimalStarRating = ({
 
     return (
         <div className="inline-flex items-center relative">
-            {Array.from(Array(max).keys()).map((_, i) => (
-                <Icon key={i} className="stroke-0 size-10 fill-yellow-500" />
+            {Array.from(Array(5).keys()).map((_, i) => (
+                <Icon key={i} className="stroke-0 size-20 fill-yellow-500" />
             ))}
             <div
                 className="bg-slate-500 absolute top-0 right-0 bottom-0 z-10 mix-blend-color"
@@ -34,7 +34,7 @@ const DecimalStarRating = ({
 }
 
 const data = [
-    { value: 3.5, max: 5 },
+    { value: 5, max: 5 },
     { value: 2.4, max: 5, icon: Bird },
     { value: 4.8, max: 5, icon: Snail },
     { value: 7.3, max: 10, icon: Cat },

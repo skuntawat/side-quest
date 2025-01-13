@@ -7,7 +7,7 @@ export default function Page() {
             <div className="border border-black p-4 rounded-md">
                 <Image
                     alt='kunkode-logo'
-                    src="/images/abstract-logo.png"
+                    src="/images/kunkode-logo.png"
                     width={300}
                     height={300}
                 />
@@ -15,7 +15,7 @@ export default function Page() {
             <div className="border border-black p-4 rounded-md">
                 <Image
                     alt='kunkode-logo'
-                    src="/images/abstract-logo.png"
+                    src="/images/kunkode-logo.png"
                     width={300}
                     height={300}
                     className="brightness-0"
@@ -24,7 +24,7 @@ export default function Page() {
             <div className="bg-[#272822] p-4 rounded-md">
                 <Image
                     alt='kunkode-logo'
-                    src="/images/abstract-logo.png"
+                    src="/images/kunkode-logo.png"
                     width={300}
                     height={300}
                     className="brightness-0 invert"

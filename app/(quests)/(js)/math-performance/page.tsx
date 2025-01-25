@@ -1,7 +1,9 @@
 "use client"
 
 import React, { useState } from 'react'
-import numbers from './data/numbers.json'
+
+// random array of numbers 100,000 with number between 1 - 1000 
+const numbers = Array.from({ length: 100000 }, () => Math.floor(Math.random() * 1000));
 
 export default function Page() {
 

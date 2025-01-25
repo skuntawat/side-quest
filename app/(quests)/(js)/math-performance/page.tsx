@@ -5,33 +5,33 @@ import numbers from './data/numbers.json'
 
 export default function Page() {
 
-    const [performance, setPerformance] = useState({
-        useES6Spread: {
+    const [state, setState] = useState({
+        'useES6Spread': {
             result: '',
             time: ''
         },
-        useReduce: {
+        'useReduce': {
             result: '',
             time: ''
         },
-        useApply: {
+        'useApply': {
             result: '',
             time: ''
         },
-        useLoop: {
+        'useLoop': {
             result: '',
             time: ''
         }
     })
 
-    const withPerformance = (callback: () => void) => {
-        const start = window.performance.now();
+    const withPerformance = (callback: () => number, callbackName: string) => {
+        const start = performance.now();
         const result = callback()
-        const end = window.performance.now();
+        const end = performance.now();
 
-        setPerformance({
-            ...performance,
-            [callback.name]: {
+        setState({
+            ...state,
+            [callbackName]: { // cannot use callback.name on production
                 result,
                 time: (end - start)
             }
@@ -71,21 +71,21 @@ export default function Page() {
             <div className="font-semibold">Result</div>
             <div className="font-semibold">Time(ms)</div>
 
-            <button onClick={() => withPerformance(useES6Spread)} className='p-4 bg-[#00c7b0] rounded-md'>useES6Spread</button>
-            <div>{performance?.useES6Spread?.result}</div>
-            <div>{performance?.useES6Spread?.time}</div>
+            <button onClick={() => withPerformance(useES6Spread, 'useES6Spread')} className='p-4 bg-[#00c7b0] rounded-md'>useES6Spread</button>
+            <div>{state?.useES6Spread?.result}</div>
+            <div>{state?.useES6Spread?.time}</div>
 
-            <button onClick={() => withPerformance(useReduce)} className='p-4 bg-[#ff6038] rounded-md'>useReduce</button>
-            <div>{performance?.useReduce?.result}</div>
-            <div>{performance?.useReduce?.time}</div>
+            <button onClick={() => withPerformance(useReduce, 'useReduce')} className='p-4 bg-[#ff6038] rounded-md'>useReduce</button>
+            <div>{state?.useReduce?.result}</div>
+            <div>{state?.useReduce?.time}</div>
 
-            <button onClick={() => withPerformance(useApply)} className='p-4 bg-[#ffa257] rounded-md'>useApply</button>
-            <div>{performance?.useApply?.result}</div>
-            <div>{performance?.useApply?.time}</div>
+            <button onClick={() => withPerformance(useApply, 'useApply')} className='p-4 bg-[#ffa257] rounded-md'>useApply</button>
+            <div>{state?.useApply?.result}</div>
+            <div>{state?.useApply?.time}</div>
 
-            <button onClick={() => withPerformance(useLoop)} className='p-4 bg-[#ffce52] rounded-md'>useLoop</button>
-            <div>{performance?.useLoop?.result}</div>
-            <div>{performance?.useLoop?.time}</div>
+            <button onClick={() => withPerformance(useLoop, 'useLoop')} className='p-4 bg-[#ffce52] rounded-md'>useLoop</button>
+            <div>{state?.useLoop?.result}</div>
+            <div>{state?.useLoop?.time}</div>
 
         </div>
     )
